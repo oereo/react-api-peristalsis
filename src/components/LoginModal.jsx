@@ -104,11 +104,13 @@ function LoginModal(props){
                   .then(res => res.json())
                   .then(json => {
                     // user data와 token정보가 일치하면 로그인 성공
-                    if (json.user && json.user.username && json.token) {
+                    console.log(json)
+                    if (json.user && json.user.email && json.token) {
                       props.userHasAuthenticated(true, json.user.username, json.token);
                       history.push("/");
                       props.setModal(true)
                       console.log(json)
+                      console.log(json.token)
                     }else{
                       alert("아이디 또는 비밀번호를 확인해주세요.")
                     }

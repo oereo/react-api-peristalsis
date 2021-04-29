@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Navi from './components/Navigation'
 import LoginModal from './components/LoginModal';
+import Profile from './components/Profile';
 import { Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 
@@ -103,6 +104,9 @@ function App() {
 
           <Route exact path="/">
             <Navi/>
+          </Route>
+          <Route exact path="/profile">
+            <Profile/>
           </Route>
 
           <Route exact path="/login">

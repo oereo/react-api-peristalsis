@@ -13,7 +13,6 @@ function Board(props){
     const histoty = useHistory()
     let [goback, setGoback] = useState(false)
     let [imgGoback, setImgGoback] = useState(false)
-
     let [img , setImg] = useState()
     let [imgURL, setImgURL] = useState()
     let [title , setTitle] = useState()
@@ -34,6 +33,7 @@ function Board(props){
             profileImage : userPhoto
         }
         handleSubmit()
+
     }
 
     const handleSubmit = () => {
@@ -49,7 +49,7 @@ function Board(props){
         form_data.append('image', fileField.files[0])
         form_data.append('profileImage', sendData.profileImage)
 
-        fetch("http://localhost:8000/api/Todos/", {
+        fetch("http://localhost:8000/post/post/", {
             method : 'POST',
             headers: {
                 Authorization : `JWT ${localStorage.getItem('token')}`,
@@ -71,6 +71,8 @@ function Board(props){
         .then(json => {
           // 현재 유저 정보 받아왔다면, 로그인 상태로 state 업데이트 하고
           if (json.id) {
+              console.log(props)
+              console.log(json)
             //유저정보를 받아왔으면 해당 user의 프로필을 받아온다.
         }fetch('http://localhost:8000/user/auth/profile/' + json.id + '/update/',{
                 method : 'PATCH',

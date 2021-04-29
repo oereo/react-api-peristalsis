@@ -107,11 +107,11 @@ function App() {
             <Navi/>
           </Route>
           <Route exact path="/profile">
-            <Profile/>
+            <Profile />
           </Route>
 
           <Route exact path="/board">
-            <Board/>
+            <Board user={user}/>
           </Route>
           <Route exact path="/login">
             <LoginModal setModal={setModal} userHasAuthenticated={userHasAuthenticated}/>

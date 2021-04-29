@@ -11,7 +11,7 @@ function Trend(){
     useEffect(()=>{
         (()=> {
         try{
-            fetch('http://localhost:8000/api/Todos/')
+            fetch('http://localhost:8000/post/post/')
             .then((res)=>res.json())
             .then((posts)=>{
                 setTodoList(posts)

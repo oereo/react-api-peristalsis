@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Navi from './components/Navigation'
 import LoginModal from './components/LoginModal';
 import Profile from './components/Profile';
+import Board from './components/Board';
 import { Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 
@@ -109,6 +110,9 @@ function App() {
             <Profile/>
           </Route>
 
+          <Route exact path="/board">
+            <Board/>
+          </Route>
           <Route exact path="/login">
             <LoginModal setModal={setModal} userHasAuthenticated={userHasAuthenticated}/>
           </Route>

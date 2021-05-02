@@ -47,6 +47,7 @@ function Header(props){
               ? <Link to="/login"><button className="header-btn">로그인</button></Link>
               : (
                 <>
+                <Link to = "/chat"><button>채팅방</button></Link>
                 <Link className="header-dashboard" to="/board"><button>새 글 작성</button></Link>
                 <div className="user-container" onClick={()=>{setUserprofile(!userprofile)}}>
                   <img src={userPhoto} className="user-image" alt="/"></img>

@@ -6,8 +6,9 @@ import Profile from './components/Profile';
 import Board from './components/Board';
 import { Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Chat from '../src/components/Chat';
 
-function App() {
+function App({chatReducer,  mySocketId, enterChatroom, leaveChatroom, sendChat, clearChat}) {
   const [modal, setModal] = useState(false);
   const [user, setUser] = useState([])
 
@@ -109,6 +110,11 @@ function App() {
           <Route exact path="/profile">
             <Profile />
           </Route>
+            <Route path = "/chat/:id"  render={props => <Chat chatReducer={chatReducer}
+                               mySocketId={mySocketId}
+                               leaveChatroom={leaveChatroom} enterChatroom={enterChatroom}
+                               sendChat={sendChat}
+                               clearChat={clearChat} />} />
 
           <Route exact path="/board">
             <Board user={user}/>
